@@ -1,0 +1,27 @@
+# Python virtual environments
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# API keys and secrets
+.env
+.env.*
+!.env.example
+*credentials*
+*secret*
+*.pem
+*.key
+
+# macOS
+.DS_Store
+
+# Editor settings
+.vscode/
+
+# Local backups
+*_backup.py
+
+# Generated outputs
+outputs/

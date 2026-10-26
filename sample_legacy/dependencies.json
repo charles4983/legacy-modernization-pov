@@ -1,0 +1,15 @@
+{
+  "nodes": [
+    {"id": "CustomerAccounts", "type": "TABLE"},
+    {"id": "LegacyTransactions", "type": "TABLE"},
+    {"id": "GetCustomerAccounts", "type": "STORED_PROCEDURE"},
+    {"id": "AccountService", "type": "APPLICATION"},
+    {"id": "AccountLoadJob", "type": "ETL_JOB"}
+  ],
+  "edges": [
+    {"from": "GetCustomerAccounts", "to": "CustomerAccounts", "relationship": "READS"},
+    {"from": "AccountService", "to": "GetCustomerAccounts", "relationship": "CALLS"},
+    {"from": "AccountLoadJob", "to": "CustomerAccounts", "relationship": "READS"},
+    {"from": "AccountLoadJob", "to": "LegacyTransactions", "relationship": "READS"}
+  ]
+}
